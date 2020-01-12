@@ -1,13 +1,29 @@
 // Make a div
+const myDiv = document.createElement('div');
 
 // add a class of wrapper to it
+myDiv.classList.add('wrapper');
 
 // put it into the body
+document.body.appendChild(myDiv);
 
 // make an unordered list
+const myUl = document.createElement('ul');
 
 // add three list items with the words "one, two three" in them
+const li = document.createElement('li');
+li.textContent = 'one';
+myUl.append(li);
+const li2 = document.createElement('li');
+li2.textContent = 'two';
+myUl.append(li2);
+const li3 = document.createElement('li');
+li3.textContent = 'three';
+myUl.append(li3);
+
+console.log(myUl);
 // put that list into the above wrapper
+myDiv.appendChild(myUl);
 
 // create an image
 
