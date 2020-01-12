@@ -21,17 +21,29 @@ const li3 = document.createElement('li');
 li3.textContent = 'three';
 myUl.append(li3);
 
-console.log(myUl);
+// console.log(myUl);
 // put that list into the above wrapper
 myDiv.appendChild(myUl);
 
 // create an image
+const myImg = document.createElement('img');
+// console.log(myImg);
 
 // set the source to an image
+myImg.src = 'https://picsum.photos/250';
+
 // set the width to 250
+myImg.width = 250;
+
 // add a class of cute
+myImg.classList.add('cute');
+
 // add an alt of Cute Puppy
+myImg.alt = 'Cute Puppy';
+console.log(myImg);
+
 // Append that image to the wrapper
+myDiv.appendChild(myImg);
 
 // with HTML string, make a div, with two paragraphs inside of it
 // put this div before the unordered list from above
