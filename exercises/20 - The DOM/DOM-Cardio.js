@@ -1,3 +1,5 @@
+// import { doc } from 'prettier';
+
 // Make a div
 const myDiv = document.createElement('div');
 
@@ -46,20 +48,41 @@ console.log(myImg);
 myDiv.appendChild(myImg);
 
 // with HTML string, make a div, with two paragraphs inside of it
+const myHTML = `
+  <div class='wrapper'>
+    <p></p>
+    <p></p>
+  </div>
+`;
+const myString = document.createRange().createContextualFragment(myHTML);
+
+document.body.append(myString);
+
 // put this div before the unordered list from above
+myDiv.insertAdjacentHTML('beforebegin', myHTML);
 
 // add a class to the second paragraph called warning
+const newClass = myHTML.querySelector('p');
+newClass.classList.add('warning');
 // remove the first paragraph
 
 // create a function called generatePlayerCard that takes in three arguments: name, age, and height
-
-// have that function return html that looks like this:
-// <div class="playerCard">
-//   <h2>NAME — AGE</h2>
-//   <p>They are HEIGHT and AGE years old. In Dog years this person would be AGEINDOGYEARS. That would be a tall dog!</p>
-// </div>
+function generatePlayerCard(name, age, height) {
+  // have that function return html that looks like this:
+  // <div class="playerCard">
+  //   <h2>NAME — AGE</h2>
+  //   <p>They are HEIGHT and AGE years old. In Dog years this person would be AGEINDOGYEARS. That would be a tall dog!</p>
+  // </div>
+  const cards = `<div class="playerCard">
+  <h2>NAME — AGE</h2>
+  <p>They are HEIGHT and AGE years old. In Dog years this person would be AGEINDOGYEARS. That would be a tall dog!</p>
+  </div>`;
+  return cards;
+}
 
 // make a new div with a class of cards
+const functionDiv = document.createElement('div');
+functionDiv.classList.add('cards');
 
 // Have that function make 4 cards
 
